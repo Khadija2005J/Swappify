@@ -1,0 +1,435 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    /* Original teal background - used by Dashboard and other pages */
+    background: #0F2E35;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* --- FIX FOR THE THIN LINE --- */
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+/* --- MAIN WRAPPER --- */
+.auth-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+  height: 560px;
+    /* CHANGED: Match Body Background */
+    background: #0F2E35;
+    /* Accents: Teal */
+    border: 2px solid #4fd1c5;
+    box-shadow: 0 0 25px #4fd1c5;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Floating Icons Animation for Login Page */
+.floating-icons-login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  /* Dark blue gradient background - only for Login page */
+  background: linear-gradient(to bottom, #0a192f, #152d2d);
+}
+
+.floating-icons-login .floating-icon {
+  position: absolute;
+  font-size: 24px;
+  color: rgba(29, 233, 182, 0.15);
+  animation: float 20s infinite ease-in-out;
+}
+
+.floating-icons-login .icon-1 { top: 10%; left: 10%; animation-delay: 0s; animation-duration: 18s; }
+.floating-icons-login .icon-2 { top: 20%; left: 80%; animation-delay: 2s; animation-duration: 22s; }
+.floating-icons-login .icon-3 { top: 50%; left: 5%; animation-delay: 4s; animation-duration: 20s; }
+.floating-icons-login .icon-4 { top: 60%; left: 85%; animation-delay: 1s; animation-duration: 25s; }
+.floating-icons-login .icon-5 { top: 30%; left: 50%; animation-delay: 3s; animation-duration: 19s; }
+.floating-icons-login .icon-6 { top: 70%; left: 20%; animation-delay: 5s; animation-duration: 23s; }
+.floating-icons-login .icon-7 { top: 15%; left: 30%; animation-delay: 2.5s; animation-duration: 21s; }
+.floating-icons-login .icon-8 { top: 80%; left: 60%; animation-delay: 1.5s; animation-duration: 24s; }
+.floating-icons-login .icon-9 { top: 40%; left: 90%; animation-delay: 3.5s; animation-duration: 18s; }
+.floating-icons-login .icon-10 { top: 5%; left: 70%; animation-delay: 4.5s; animation-duration: 22s; }
+.floating-icons-login .icon-11 { top: 25%; left: 15%; animation-delay: 6s; animation-duration: 26s; }
+.floating-icons-login .icon-12 { top: 45%; left: 75%; animation-delay: 7s; animation-duration: 19s; }
+.floating-icons-login .icon-13 { top: 65%; left: 40%; animation-delay: 8s; animation-duration: 21s; }
+.floating-icons-login .icon-14 { top: 12%; left: 55%; animation-delay: 9s; animation-duration: 24s; }
+.floating-icons-login .icon-15 { top: 55%; left: 10%; animation-delay: 10s; animation-duration: 20s; }
+.floating-icons-login .icon-16 { top: 35%; left: 65%; animation-delay: 11s; animation-duration: 23s; }
+.floating-icons-login .icon-17 { top: 75%; left: 45%; animation-delay: 12s; animation-duration: 22s; }
+.floating-icons-login .icon-18 { top: 8%; left: 25%; animation-delay: 13s; animation-duration: 25s; }
+.floating-icons-login .icon-19 { top: 42%; left: 82%; animation-delay: 14s; animation-duration: 18s; }
+.floating-icons-login .icon-20 { top: 68%; left: 72%; animation-delay: 15s; animation-duration: 21s; }
+.floating-icons-login .icon-21 { top: 28%; left: 35%; animation-delay: 16s; animation-duration: 24s; }
+.floating-icons-login .icon-22 { top: 52%; left: 92%; animation-delay: 17s; animation-duration: 19s; }
+.floating-icons-login .icon-23 { top: 18%; left: 62%; animation-delay: 18s; animation-duration: 23s; }
+.floating-icons-login .icon-24 { top: 72%; left: 8%; animation-delay: 19s; animation-duration: 22s; }
+.floating-icons-login .icon-25 { top: 38%; left: 48%; animation-delay: 20s; animation-duration: 20s; }
+.floating-icons-login .icon-26 { top: 62%; left: 28%; animation-delay: 21s; animation-duration: 25s; }
+.floating-icons-login .icon-27 { top: 22%; left: 88%; animation-delay: 22s; animation-duration: 18s; }
+.floating-icons-login .icon-28 { top: 48%; left: 18%; animation-delay: 23s; animation-duration: 21s; }
+.floating-icons-login .icon-29 { top: 82%; left: 52%; animation-delay: 24s; animation-duration: 24s; }
+.floating-icons-login .icon-30 { top: 32%; left: 95%; animation-delay: 25s; animation-duration: 19s; }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.15;
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px) rotate(90deg);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateY(-60px) translateX(-20px) rotate(180deg);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateY(-30px) translateX(30px) rotate(270deg);
+    opacity: 0.2;
+  }
+}
+
+.auth-wrapper .credentials-panel {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* --- SIGN IN PANEL --- */
+.credentials-panel.signin { left: 0; padding: 0 40px; }
+.credentials-panel.signin .slide-element { transform: translateX(0%); transition: .7s; opacity: 1; }
+.credentials-panel.signin .slide-element:nth-child(1) { transition-delay: 2.1s; }
+.credentials-panel.signin .slide-element:nth-child(2) { transition-delay: 2.2s; }
+.credentials-panel.signin .slide-element:nth-child(3) { transition-delay: 2.3s; }
+.credentials-panel.signin .slide-element:nth-child(4) { transition-delay: 2.4s; }
+.credentials-panel.signin .slide-element:nth-child(5) { transition-delay: 2.5s; }
+
+.auth-wrapper.toggled .credentials-panel.signin .slide-element { transform: translateX(-120%); opacity: 0; }
+.auth-wrapper.toggled .credentials-panel.signin .slide-element:nth-child(1) { transition-delay: 0s; }
+.auth-wrapper.toggled .credentials-panel.signin .slide-element:nth-child(2) { transition-delay: 0.1s; }
+.auth-wrapper.toggled .credentials-panel.signin .slide-element:nth-child(3) { transition-delay: 0.2s; }
+.auth-wrapper.toggled .credentials-panel.signin .slide-element:nth-child(4) { transition-delay: 0.3s; }
+.auth-wrapper.toggled .credentials-panel.signin .slide-element:nth-child(5) { transition-delay: 0.4s; }
+
+/* --- SIGN UP PANEL --- */
+.credentials-panel.signup { right: 0; padding: 8px 52px; }
+.credentials-panel.signup .slide-element { transform: translateX(120%); transition: .7s ease; opacity: 0; filter: blur(10px); }
+.credentials-panel.signup .slide-element:nth-child(1) { transition-delay: 0s; }
+.credentials-panel.signup .slide-element:nth-child(2) { transition-delay: 0.1s; }
+.credentials-panel.signup .slide-element:nth-child(3) { transition-delay: 0.2s; }
+.credentials-panel.signup .slide-element:nth-child(4) { transition-delay: 0.3s; }
+.credentials-panel.signup .slide-element:nth-child(5) { transition-delay: 0.4s; }
+.credentials-panel.signup .slide-element:nth-child(6) { transition-delay: 0.5s; }
+
+.auth-wrapper.toggled .credentials-panel.signup .slide-element { transform: translateX(0%); opacity: 1; filter: blur(0px); }
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(1) { transition-delay: 1.7s; }
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(2) { transition-delay: 1.8s; }
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(3) { transition-delay: 1.9s; }
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(4) { transition-delay: 1.9s; }
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(5) { transition-delay: 2.0s; }
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(6) { transition-delay: 2.1s; }
+
+.credentials-panel.signup .field-wrapper {
+  margin-top: 18px;
+}
+
+.credentials-panel.signup .switch-link {
+  margin: 14px 0 8px;
+}
+
+/* --- TEXT & INPUTS --- */
+.credentials-panel h2 { font-size: 32px; text-align: center; }
+
+.credentials-panel .field-wrapper {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+}
+
+.credentials-panel .field-wrapper.recaptcha-wrapper {
+    height: auto;
+    min-height: 78px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.credentials-panel .field-wrapper.recaptcha-wrapper > div {
+    max-width: 100%;
+}
+
+@media (max-width: 860px) {
+  .credentials-panel .field-wrapper.recaptcha-wrapper {
+    justify-content: flex-start;
+  }
+
+  .credentials-panel .field-wrapper.recaptcha-wrapper .g-recaptcha {
+    transform: scale(0.92);
+    transform-origin: left top;
+  }
+}
+
+.field-wrapper input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid #fff;
+    padding-right: 23px;
+    transition: .5s;
+}
+
+/* COLOR: Input Border Focus (Teal) */
+.field-wrapper input:focus,
+.field-wrapper input:not(:placeholder-shown) {
+    border-bottom: 2px solid #4fd1c5;
+}
+
+.field-wrapper label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    transition: .5s;
+    pointer-events: none;
+}
+
+/* COLOR: Label Focus (Teal) */
+.field-wrapper input:focus~label,
+.field-wrapper input:not(:placeholder-shown)~label {
+    top: -5px;
+    color: #4fd1c5;
+}
+
+.field-wrapper i {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 18px;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+/* COLOR: Icon Focus (Teal) */
+.field-wrapper input:focus~i,
+.field-wrapper input:not(:placeholder-shown)~i {
+    color: #4fd1c5;
+}
+
+/* --- THE BUTTON (Teal Gradient + Petrol Background) --- */
+.submit-button {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    /* COLOR: Teal */
+    border: 2px solid #4fd1c5;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.submit-button::before {
+    content: "";
+    position: absolute;
+    height: 300%;
+    width: 100%;
+    /* CHANGED: Gradient uses new Petrol Blue (#0F2E35) + Teal */
+    background: linear-gradient(#0F2E35, #4fd1c5, #0F2E35, #4fd1c5);
+    top: -100%;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.submit-button:hover:before { top: 0; }
+
+.switch-link {
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.switch-link a {
+    text-decoration: none;
+    /* COLOR: Teal */
+    color: #4fd1c5;
+    font-weight: 600;
+}
+.switch-link a:hover { text-decoration: underline; }
+
+/* --- WELCOME SECTIONS --- */
+.welcome-section {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.welcome-section.signin { right: 0; text-align: right; padding: 0 40px 60px 150px; }
+.welcome-section.signin .slide-element { transform: translateX(0); transition: .7s ease; opacity: 1; filter: blur(0px); }
+.welcome-section.signin .slide-element:nth-child(1) { transition-delay: 2.0s; }
+.welcome-section.signin .slide-element:nth-child(2) { transition-delay: 2.1s; }
+
+.auth-wrapper.toggled .welcome-section.signin .slide-element { transform: translateX(120%); opacity: 0; filter: blur(10px); }
+.auth-wrapper.toggled .welcome-section.signin .slide-element:nth-child(1) { transition-delay: 0s; }
+.auth-wrapper.toggled .welcome-section.signin .slide-element:nth-child(2) { transition-delay: 0.1s; }
+
+.welcome-section.signup { left: 0; text-align: left; padding: 0 150px 60px 38px; pointer-events: none; }
+.welcome-section.signup .slide-element { transform: translateX(-120%); transition: .7s ease; opacity: 0; filter: blur(10PX); }
+.welcome-section.signup .slide-element:nth-child(1) { transition-delay: 0s; }
+.welcome-section.signup .slide-element:nth-child(2) { transition-delay: 0.1s; }
+
+.auth-wrapper.toggled .welcome-section.signup .slide-element { transform: translateX(0%); opacity: 1; filter: blur(0); }
+.auth-wrapper.toggled .welcome-section.signup .slide-element:nth-child(1) { transition-delay: 1.7s; }
+.auth-wrapper.toggled .welcome-section.signup .slide-element:nth-child(2) { transition-delay: 1.8s; }
+
+.welcome-section h2 { text-transform: uppercase; font-size: 36px; line-height: 1.3; }
+
+/* --- SHAPES (Teal Gradient + Petrol Background) --- */
+.auth-wrapper .background-shape {
+    position: absolute;
+    right: 0;
+    top: -5px;
+    height: 600px;
+    width: 850px;
+    /* CHANGED: Gradient uses new Petrol Blue (#0F2E35) + Teal */
+    background: linear-gradient(45deg, #0F2E35, #4fd1c5);
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
+}
+
+.auth-wrapper.toggled .background-shape { transform: rotate(0deg) skewY(0deg); transition-delay: .5s; }
+
+.auth-wrapper .secondary-shape {
+    position: absolute;
+    left: 250px;
+    top: 100%;
+    height: 700px;
+    width: 850px;
+    /* CHANGED: Background uses new Petrol Blue */
+    background: #0F2E35;
+    /* COLOR: Teal Border */
+    border-top: 3px solid #4fd1c5;
+    transform: rotate(0deg) skewY(0deg);
+    transform-origin: bottom left;
+    transition: 1.5s ease;
+    transition-delay: .5s;
+}
+
+.auth-wrapper.toggled .secondary-shape { transform: rotate(-11deg) skewY(-41deg); transition-delay: 1.2s; }
+
+/* Fix for autofill background color */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #0F2E35 inset;
+  -webkit-text-fill-color: #fff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #0F2E35 inset;
+  -webkit-text-fill-color: #fff;
+}
+
+/* ===== SMOOTH PAGE TRANSITIONS ===== */
+
+/* Page fade in animation */
+.page-wrapper {
+  animation: pageSlideIn 0.4s ease-out;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Route transition container */
+.route-container {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible improvements */
+*:focus-visible {
+  outline: 2px solid #4fd1c5;
+  outline-offset: 2px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
